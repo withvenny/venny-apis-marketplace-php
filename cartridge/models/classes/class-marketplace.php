@@ -609,6 +609,9 @@
         //
         public function insertCategory($request) {
 
+            echo json_encode($request);
+            //exit;
+
             //generate ID
             if(!isset($request['id'])){$request['id'] = $this->token->new_id('cat');}
 
