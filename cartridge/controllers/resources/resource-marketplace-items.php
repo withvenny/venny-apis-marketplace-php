@@ -24,6 +24,10 @@
     if(isset($_REQUEST['name'])){$request['name'] = clean($_REQUEST['name']);}		
     if(isset($_REQUEST['description'])){$request['description'] = clean($_REQUEST['description']);}		
     if(isset($_REQUEST['slug'])){$request['slug'] = clean($_REQUEST['slug']);}		
+    if(isset($_REQUEST['sku'])){$request['sku'] = clean($_REQUEST['sku']);}		
+    if(isset($_REQUEST['price'])){$request['price'] = clean($_REQUEST['price']);}		
+    if(isset($_REQUEST['inventory'])){$request['inventory'] = clean($_REQUEST['inventory']);}		
+    if(isset($_REQUEST['manufacturer'])){$request['manufacturer'] = clean($_REQUEST['manufacturer']);}		
     if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
     if(isset($_REQUEST['product'])){$request['product'] = clean($_REQUEST['product']);}		
     if(isset($_REQUEST['partner'])){$request['partner'] = clean($_REQUEST['partner']);}		
