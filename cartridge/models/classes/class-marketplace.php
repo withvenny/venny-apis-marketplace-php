@@ -1022,8 +1022,10 @@
             if(isset($request['name'])){$columns.="product_name,";}		
             if(isset($request['description'])){$columns.="product_description,";}		
             if(isset($request['slug'])){$columns.="product_slug,";}		
+            if(isset($request['brand'])){$columns.="product_brand,";}		
             if(isset($request['images'])){$columns.="product_images,";}		
             if(isset($request['category'])){$columns.="category_id,";}		
+            if(isset($request['partner'])){$columns.="partner_id,";}		
             
             $columns.= "app_id,";
             $columns.= "event_id,";
@@ -1039,8 +1041,10 @@
             if(isset($request['name'])){$values.=":product_name,";}		
             if(isset($request['description'])){$values.=":product_description,";}		
             if(isset($request['slug'])){$values.=":product_slug,";}		
+            if(isset($request['brand'])){$values.=":product_brand,";}		
             if(isset($request['images'])){$values.=":product_images,";}		
             if(isset($request['category'])){$values.=":category_id,";}		
+            if(isset($request['partner'])){$values.=":partner_id,";}		
             
             $values.= ":app_id,";
             $values.= ":event_id,";
@@ -1065,8 +1069,10 @@
             if(isset($request['name'])){$statement->bindValue('product_name',$request['name']);}		
             if(isset($request['description'])){$statement->bindValue('product_description',$request['description']);}		
             if(isset($request['slug'])){$statement->bindValue('product_slug',$request['slug']);}		
+            if(isset($request['brand'])){$statement->bindValue('product_brand',$request['brand']);}		
             if(isset($request['images'])){$statement->bindValue('product_images',$request['images']);}		
             if(isset($request['category'])){$statement->bindValue('category_id',$request['category']);}		
+            if(isset($request['partner'])){$statement->bindValue('partner_id',$request['partner']);}		
             
             $statement->bindValue(':app_id', $request['app']);
             $statement->bindValue(':event_id', $this->token->event_id());
@@ -1114,7 +1120,9 @@
                 product_name,		
                 product_description,		
                 product_slug,		
+                product_brand,		
                 product_images,		
+                partner_ID,		
                 category_ID,		
                 app_ID,		
                 time_updated,		
@@ -1176,8 +1184,10 @@
                     if(isset($request['name'])){$refinements.="product_name"." ILIKE "."'%".$request['name']."%' AND ";}		
                     if(isset($request['description'])){$refinements.="product_description"." ILIKE "."'%".$request['description']."%' AND ";}		
                     if(isset($request['slug'])){$refinements.="product_slug"." ILIKE "."'%".$request['slug']."%' AND ";}		
+                    if(isset($request['brand'])){$refinements.="product_brand"." ILIKE "."'%".$request['brand']."%' AND ";}		
                     //if(isset($request['images'])){$refinements.="product_images"." ILIKE "."'%".$request['images']."%' AND ";}		
                     if(isset($request['category'])){$refinements.="category_id"." = "."'".$request['category']."' AND ";}		
+                    //if(isset($request['partner'])){$refinements.="partner_id"." = "."'".$request['partner']."' AND ";}		
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
@@ -1235,9 +1245,11 @@
                             'name' => $row['product_name'],		
                             'description' => $row['product_description'],		
                             'slug' => $row['product_slug'],		
+                            'brand' => $row['product_brand'],		
                             'images' => json_decode($row['product_images']),		
                             'category' => $row['category_id'],		
                             'app' => $row['app_id'],		
+                            'partner' => $row['partner_id'],		
                             'updated' => $row['time_updated'],		
                             'when' => $row['time_finished'],		
                             
@@ -1305,6 +1317,7 @@
             if(isset($request['online'])){$set.= " product_online = :product_online ";}		
             if(isset($request['public'])){$set.= " product_public = :product_public ";}		
             if(isset($request['name'])){$set.= " product_name = :product_name ";}		
+            if(isset($request['brand'])){$set.= " product_brand = :product_brand ";}		
             if(isset($request['description'])){$set.= " product_description = :product_description ";}		
             if(isset($request['slug'])){$set.= " product_slug = :product_slug ";}		
             if(isset($request['images'])){$set.= " product_images = :product_images ";}		
@@ -1334,6 +1347,7 @@
             if(isset($request['name'])){$statement->bindValue(':product_name', $request['name']);}		
             if(isset($request['description'])){$statement->bindValue(':product_description', $request['description']);}		
             if(isset($request['slug'])){$statement->bindValue(':product_slug', $request['slug']);}		
+            if(isset($request['brand'])){$statement->bindValue(':product_brand', $request['brand']);}		
             if(isset($request['images'])){$statement->bindValue(':product_images', $request['images']);}		
 
             $statement->bindValue(':id', $id);
