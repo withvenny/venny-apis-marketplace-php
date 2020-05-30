@@ -972,7 +972,7 @@
 
             $id = $request['id'];
             $domain = $request['domain'];
-            $column = prefixed($domain) . '_id';
+            $column = $domain . '_id';
             $sql = 'DELETE FROM ' . $domain . ' WHERE '.$column.' = :id';
             //echo $id; //exit
             //echo $column; //exit;
