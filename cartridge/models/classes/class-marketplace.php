@@ -748,7 +748,7 @@
                 if(!empty($request['id'])) {
 
                     $conditions.= ' WHERE ';
-                    $conditions.= ' ' . $prefix . '_id = :id ';
+                    $conditions.= ' ' . $domain . '_id = :id ';
                     $conditions.= ' AND active = 1 ';
                     $conditions.= ' ORDER BY time_finished DESC ';
 
