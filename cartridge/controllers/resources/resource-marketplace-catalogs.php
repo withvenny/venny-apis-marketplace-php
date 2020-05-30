@@ -52,7 +52,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getCatalog();
+                echo $e->getMessage();
 
             }
 
