@@ -726,9 +726,9 @@
                 category_name,		
                 category_description,		
                 category_slug,		
-                category_images,		
+                category_images,
+                category_parent,	
                 catalog_ID,
-                parent,
                 app_ID,		
                 time_updated,		
                 time_finished	
