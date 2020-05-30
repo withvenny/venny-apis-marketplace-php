@@ -4,9 +4,9 @@
     header('Content-Type: application/json');
 
     //
-    use Messaging\Connection as Connection;
-    use Messaging\Token as Token;
-    use Messaging\Thread as Thread;
+    use Marketplace\Connection as Connection;
+    use Marketplace\Token as Token;
+    use Marketplace\Catalog as Catalog;
 
     // connect to the PostgreSQL database
     $pdo = Connection::get()->connect();
@@ -17,13 +17,16 @@
     if(isset($_REQUEST['token'])){$request['token'] = clean($_REQUEST['token']);}
 
     // INITIATE DATA CLEANSE
-    if(isset($_REQUEST['id'])){$request['id'] = clean($_REQUEST['id']);}
-    if(isset($_REQUEST['attributes'])){$request['attributes'] = clean($_REQUEST['attributes']);}
-    if(isset($_REQUEST['title'])){$request['title'] = clean($_REQUEST['title']);}
-    if(isset($_REQUEST['participants'])){$request['participants'] = clean($_REQUEST['participants']);}
-    if(isset($_REQUEST['preview'])){$request['preview'] = clean($_REQUEST['preview']);}
-    if(isset($_REQUEST['profile'])){$request['profile'] = clean($_REQUEST['profile']);}   
-
+    if(isset($_REQUEST['id'])){$request['id'] = clean($_REQUEST['id']);}		
+    if(isset($_REQUEST['attributes'])){$request['attributes'] = clean($_REQUEST['attributes']);}		
+    if(isset($_REQUEST['online'])){$request['online'] = clean($_REQUEST['online']);}		
+    if(isset($_REQUEST['public'])){$request['public'] = clean($_REQUEST['public']);}		
+    if(isset($_REQUEST['name'])){$request['name'] = clean($_REQUEST['name']);}		
+    if(isset($_REQUEST['description'])){$request['description'] = clean($_REQUEST['description']);}		
+    if(isset($_REQUEST['slug'])){$request['slug'] = clean($_REQUEST['slug']);}		
+    if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
+    if(isset($_REQUEST['partner'])){$request['partner'] = clean($_REQUEST['partner']);}		
+    
     //
     switch ($_SERVER['REQUEST_METHOD']) {
 
@@ -33,14 +36,14 @@
             try {
 
                 // 
-                $thread = new Thread($pdo);
+                $catalog = new Catalog($pdo);
             
                 // insert a stock into the stocks table
-                $id = $thread->insertThread($request);
+                $id = $catalog->insertCatalog($request);
 
                 $request['id'] = $id;
 
-                $results = $thread->selectThreads($request);
+                $results = $catalog->selectCatalogs($request);
 
                 $results = json_encode($results);
                 
@@ -49,7 +52,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getMessage();
+                echo $e->getCatalog();
 
             }
 
@@ -66,10 +69,10 @@
             try {
 
                 // 
-                $thread = new Thread($pdo);
+                $catalog = new Catalog($pdo);
 
                 // get all stocks data
-                $results = $thread->selectThreads($request);
+                $results = $catalog->selectCatalogs($request);
 
                 $results = json_encode($results);
 
@@ -77,7 +80,7 @@
 
             } catch (\PDOException $e) {
 
-                echo $e->getMessage();
+                echo $e->getCatalog();
 
             }
 
@@ -89,14 +92,14 @@
             try {
 
                 // 
-                $thread = new Thread($pdo);
+                $catalog = new Catalog($pdo);
             
                 // insert a stock into the stocks table
-                $id = $thread->updateThread($request);
+                $id = $catalog->updateCatalog($request);
 
                 $request['id'] = $id;
 
-                $results = $thread->selectThreads($request);
+                $results = $catalog->selectCatalogs($request);
 
                 $results = json_encode($results);
 
@@ -104,7 +107,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getMessage();
+                echo $e->getCatalog();
 
             }
 
@@ -116,16 +119,16 @@
             try {
 
                 // 
-                $thread = new Thread($pdo);
+                $catalog = new Catalog($pdo);
             
                 // insert a stock into the stocks table
-                $id = $thread->deleteThread($request);
+                $id = $catalog->deleteCatalog($request);
 
                 echo 'The record ' . $id . ' has been deleted';
             
             } catch (\PDOException $e) {
 
-                echo $e->getMessage();
+                echo $e->getCatalog();
 
             }
 

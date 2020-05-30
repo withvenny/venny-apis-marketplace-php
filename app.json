@@ -1,6 +1,6 @@
 {
-  "name": "The Official Venny Labs Messaging API.",
+  "name": "The Official Venny Labs Marketplace API.",
   "description": "A complete API web app written in PHP that makes use of the ReactPHP library.",
-  "repository": "https://github.com/withvenny/venny-api-identity",
+  "repository": "https://github.com/withvenny/venny-apis-marketplace-php",
   "addons": []
 }

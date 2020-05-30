@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_URI} !cartridge
 RewriteRule (.*) cartridge/$1 [L]
 
 # Include path for localhost
-php_value include_path ".:/Library/WebServer/Documents/api.messaging.venny.io/catridge:/Library/WebServer/Documents/api.messaging.venny.io/vendor"
+php_value include_path ".:/Library/WebServer/Documents/api.marketplace.venny.io/catridge:/Library/WebServer/Documents/api.marketplace.venny.io/vendor"
 
 # keeps root directory file paths hidden
 Options -Indexes
