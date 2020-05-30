@@ -1406,25 +1406,28 @@
         //
         public function insertItem($request) {
 
+            echo "insertItem -> " . json_encode($request);
+            //exit;
+
             //generate ID
             if(!isset($request['id'])){$request['id'] = $this->token->new_id('itm');}
 
             $columns = "";
 
             // INSERT OBJECT - COLUMNS
-            if(isset($request['id'])){$columns.="item_id,";}		
-            if(isset($request['attributes'])){$columns.="item_attributes,";}		
-            if(isset($request['online'])){$columns.="item_online,";}		
-            if(isset($request['public'])){$columns.="item_public,";}		
-            if(isset($request['name'])){$columns.="item_name,";}		
-            if(isset($request['description'])){$columns.="item_description,";}		
-            if(isset($request['slug'])){$columns.="item_slug,";}		
-            if(isset($request['price'])){$columns.="item_price,";}		
-            if(isset($request['sku'])){$columns.="item_sku,";}		
-            if(isset($request['inventory'])){$columns.="item_inventory,";}		
-            if(isset($request['manufacturer'])){$columns.="item_manufacturer,";}		
-            if(isset($request['images'])){$columns.="item_images,";}		
-            if(isset($request['product'])){$columns.="product_id,";}		
+            if(isset($request['id'])){$columns.="item_id,";}
+            if(isset($request['attributes'])){$columns.="item_attributes,";}
+            if(isset($request['online'])){$columns.="item_online,";}
+            if(isset($request['public'])){$columns.="item_public,";}
+            if(isset($request['name'])){$columns.="item_name,";}
+            if(isset($request['description'])){$columns.="item_description,";}
+            if(isset($request['slug'])){$columns.="item_slug,";}
+            if(isset($request['price'])){$columns.="item_price,";}
+            if(isset($request['sku'])){$columns.="item_sku,";}
+            if(isset($request['inventory'])){$columns.="item_inventory,";}
+            if(isset($request['manufacturer'])){$columns.="item_manufacturer,";}
+            if(isset($request['images'])){$columns.="item_images,";}
+            if(isset($request['product'])){$columns.="product_id,";}	
             
             $columns.= "app_id,";
             $columns.= "event_id,";
@@ -1495,7 +1498,8 @@
         //
         public function selectItems($request) {
 
-            //echo json_encode($request); exit;
+            echo "selectItems -> " . json_encode($request);
+            //exit;
 
             //$token = new \Core\Token($this->pdo);
             $token = $this->token->validatedToken($request['token']);
