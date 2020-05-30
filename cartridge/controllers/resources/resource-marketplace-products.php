@@ -74,7 +74,7 @@
                 $product = new Product($pdo);
 
                 // get all stocks data
-                $results = $product->selectProduct($request);
+                $results = $product->selectProducts($request);
 
                 $results = json_encode($results);
 
