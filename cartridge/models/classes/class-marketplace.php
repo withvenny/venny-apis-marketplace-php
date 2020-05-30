@@ -1419,6 +1419,10 @@
             if(isset($request['name'])){$columns.="item_name,";}		
             if(isset($request['description'])){$columns.="item_description,";}		
             if(isset($request['slug'])){$columns.="item_slug,";}		
+            if(isset($request['price'])){$columns.="item_price,";}		
+            if(isset($request['sku'])){$columns.="item_sku,";}		
+            if(isset($request['inventory'])){$columns.="item_inventory,";}		
+            if(isset($request['manufacturer'])){$columns.="item_manufacturer,";}		
             if(isset($request['images'])){$columns.="item_images,";}		
             if(isset($request['product'])){$columns.="product_id,";}		
             
@@ -1436,6 +1440,10 @@
             if(isset($request['name'])){$values.=":item_name,";}		
             if(isset($request['description'])){$values.=":item_description,";}		
             if(isset($request['slug'])){$values.=":item_slug,";}		
+            if(isset($request['price'])){$values.=":item_price,";}		
+            if(isset($request['sku'])){$values.=":item_sku,";}		
+            if(isset($request['inventory'])){$values.=":item_inventory,";}		
+            if(isset($request['manufacturer'])){$values.=":item_manufacturer,";}		
             if(isset($request['images'])){$values.=":item_images,";}		
             if(isset($request['product'])){$values.=":product_id,";}		
             
@@ -1462,6 +1470,10 @@
             if(isset($request['name'])){$statement->bindValue('item_name',$request['name']);}		
             if(isset($request['description'])){$statement->bindValue('item_description',$request['description']);}		
             if(isset($request['slug'])){$statement->bindValue('item_slug',$request['slug']);}		
+            if(isset($request['sku'])){$statement->bindValue('item_sku',$request['sku']);}		
+            if(isset($request['price'])){$statement->bindValue('item_price',$request['price']);}		
+            if(isset($request['inventory'])){$statement->bindValue('item_inventory',$request['inventory']);}		
+            if(isset($request['manufacturer'])){$statement->bindValue('item_manufacturer',$request['manufacturer']);}		
             if(isset($request['images'])){$statement->bindValue('item_images',$request['images']);}		
             if(isset($request['product'])){$statement->bindValue('product_id',$request['product']);}		
             
@@ -1511,6 +1523,10 @@
                 item_name,		
                 item_description,		
                 item_slug,		
+                item_sku,		
+                item_price,		
+                item_inventory,		
+                item_manufacturer,		
                 item_images,		
                 product_ID,		
                 app_ID,		
@@ -1573,6 +1589,10 @@
                     if(isset($request['name'])){$refinements.="item_name"." ILIKE "."'%".$request['name']."%' AND ";}		
                     if(isset($request['description'])){$refinements.="item_description"." ILIKE "."'%".$request['description']."%' AND ";}		
                     if(isset($request['slug'])){$refinements.="item_slug"." ILIKE "."'%".$request['slug']."%' AND ";}		
+                    if(isset($request['sku'])){$refinements.="item_sku"." = "."'".$request['sku']."' AND ";}		
+                    //if(isset($request['price'])){$refinements.="item_price"." = "."'".$request['price']."' AND ";}		
+                    //if(isset($request['inventory'])){$refinements.="item_inventory"." = "."'".$request['inventory']."' AND ";}		
+                    if(isset($request['manufacturer'])){$refinements.="item_manufacturer"." ILIKE "."'%".$request['manufacturer']."%' AND ";}		
                     //if(isset($request['images'])){$refinements.="item_images"." ILIKE "."'%".$request['images']."%' AND ";}		
                     if(isset($request['product'])){$refinements.="product_id"." = "."'".$request['product']."' AND ";}		
 
@@ -1632,6 +1652,10 @@
                             'name' => $row['item_name'],		
                             'description' => $row['item_description'],		
                             'slug' => $row['item_slug'],		
+                            'sku' => $row['item_sku'],		
+                            'price' => $row['item_price'],		
+                            'inventory' => $row['item_inventory'],		
+                            'manufacturer' => $row['item_manufacturer'],		
                             'images' => json_decode($row['item_images']),		
                             'product' => $row['product_id'],		
                             'app' => $row['app_id'],		
@@ -1704,6 +1728,10 @@
             if(isset($request['name'])){$set.= " item_name = :item_name ";}		
             if(isset($request['description'])){$set.= " item_description = :item_description ";}		
             if(isset($request['slug'])){$set.= " item_slug = :item_slug ";}		
+            if(isset($request['price'])){$set.= " item_price = :item_price ";}		
+            if(isset($request['sku'])){$set.= " item_sku = :item_sku ";}		
+            if(isset($request['inventory'])){$set.= " item_inventory = :item_inventory ";}		
+            if(isset($request['manufacturer'])){$set.= " item_manufacturer = :item_manufacturer ";}		
             if(isset($request['images'])){$set.= " item_images = :item_images ";}		
 
             //
@@ -1731,6 +1759,10 @@
             if(isset($request['name'])){$statement->bindValue(':item_name', $request['name']);}		
             if(isset($request['description'])){$statement->bindValue(':item_description', $request['description']);}		
             if(isset($request['slug'])){$statement->bindValue(':item_slug', $request['slug']);}		
+            if(isset($request['sku'])){$statement->bindValue(':item_sku', $request['sku']);}		
+            if(isset($request['price'])){$statement->bindValue(':item_price', $request['price']);}		
+            if(isset($request['inventory'])){$statement->bindValue(':item_inventory', $request['inventory']);}		
+            if(isset($request['manufacturer'])){$statement->bindValue(':item_manufacturer', $request['manufacturer']);}		
             if(isset($request['images'])){$statement->bindValue(':item_images', $request['images']);}		
 
             $statement->bindValue(':id', $id);
