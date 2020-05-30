@@ -240,7 +240,7 @@
             if(isset($request['description'])){$columns.="catalog_description,";}		
             if(isset($request['slug'])){$columns.="catalog_slug,";}		
             if(isset($request['images'])){$columns.="catalog_images,";}		
-            if(isset($request['partner'])){$columns.="partner,";}		
+            if(isset($request['partner'])){$columns.="partner_id,";}		
             
             $columns.= "app_id,";
             $columns.= "event_id,";
@@ -386,15 +386,15 @@
                     $refinements = "";
 
                     // SELECT OBJECT - WHERE CLAUSES
-// SKIP ID		
-//if(isset($request['attributes'])){$refinements.="catalog_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}		
-if(isset($request['online'])){$refinements.="catalog_online"." = "."'".$request['online']."' AND ";}		
-if(isset($request['public'])){$refinements.="catalog_public"." = "."'".$request['public']."' AND ";}		
-if(isset($request['name'])){$refinements.="catalog_name"." ILIKE "."'%".$request['name']."%' AND ";}		
-if(isset($request['description'])){$refinements.="catalog_description"." ILIKE "."'%".$request['description']."%' AND ";}		
-if(isset($request['slug'])){$refinements.="catalog_slug"." ILIKE "."'%".$request['slug']."%' AND ";}		
-//if(isset($request['images'])){$refinements.="catalog_images"." ILIKE "."'%".$request['images']."%' AND ";}		
-if(isset($request['partner'])){$refinements.="partner_id"." = "."'".$request['partner']."' AND ";}		
+                    // SKIP ID		
+                    //if(isset($request['attributes'])){$refinements.="catalog_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}		
+                    if(isset($request['online'])){$refinements.="catalog_online"." = "."'".$request['online']."' AND ";}		
+                    if(isset($request['public'])){$refinements.="catalog_public"." = "."'".$request['public']."' AND ";}		
+                    if(isset($request['name'])){$refinements.="catalog_name"." ILIKE "."'%".$request['name']."%' AND ";}		
+                    if(isset($request['description'])){$refinements.="catalog_description"." ILIKE "."'%".$request['description']."%' AND ";}		
+                    if(isset($request['slug'])){$refinements.="catalog_slug"." ILIKE "."'%".$request['slug']."%' AND ";}		
+                    //if(isset($request['images'])){$refinements.="catalog_images"." ILIKE "."'%".$request['images']."%' AND ";}		
+                    if(isset($request['partner'])){$refinements.="partner_id"." = "."'".$request['partner']."' AND ";}		
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
