@@ -25,6 +25,9 @@
 
                 //
                 case 'catalogs': require 'controllers/resources/resource-marketplace-catalogs.php'; break;
+                case 'category': require 'controllers/resources/resource-marketplace-category.php'; break;
+                case 'products': require 'controllers/resources/resource-marketplace-products.php'; break;
+                case 'items': require 'controllers/resources/resource-marketplace-items.php'; break;
     
                 //
                 default: header("Location: template-guest-hello.php");
