@@ -1406,7 +1406,7 @@
         //
         public function insertItem($request) {
 
-            echo "insertItem -> " . json_encode($request);
+            //echo "insertItem -> " . json_encode($request);
             //exit;
 
             //generate ID
@@ -1501,7 +1501,7 @@
         //
         public function selectItems($request) {
 
-            echo "selectItems -> " . json_encode($request);
+            //echo "selectItems -> " . json_encode($request);
             //exit;
 
             //$token = new \Core\Token($this->pdo);
