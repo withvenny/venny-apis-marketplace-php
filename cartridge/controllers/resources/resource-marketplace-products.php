@@ -45,7 +45,7 @@
 
                 $request['id'] = $id;
 
-                $results = $product->selectProduct($request);
+                $results = $product->selectProducts($request);
 
                 $results = json_encode($results);
                 
