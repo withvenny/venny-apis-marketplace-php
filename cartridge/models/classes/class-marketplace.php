@@ -609,7 +609,7 @@
         //
         public function insertCategory($request) {
 
-            echo json_encode($request);
+            //echo json_encode($request);
             //exit;
 
             //generate ID
@@ -655,7 +655,10 @@
             $sql.= ") VALUES (";
             $sql.= $values;
             $sql.= ")";
-            $sql.= " RETURNING " . prefixed($request['domain']) . "_id";
+            $sql.= " RETURNING " . $request['domain'] . "_id";
+
+            //echo json_encode($request);
+            //exit;
     
             //
             $statement = $this->pdo->prepare($sql);
