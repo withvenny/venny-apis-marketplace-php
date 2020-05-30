@@ -77,7 +77,7 @@
                 $item = new Item($pdo);
 
                 // get all stocks data
-                $results = $item->selectItem($request);
+                $results = $item->selectItems($request);
 
                 $results = json_encode($results);
 
@@ -104,7 +104,7 @@
 
                 $request['id'] = $id;
 
-                $results = $item->selectItem($request);
+                $results = $item->selectItems($request);
 
                 $results = json_encode($results);
 
