@@ -1,7 +1,7 @@
 <?php
 
     //
-    namespace Messaging;
+    namespace Marketplace;
 
     //
     class Connection {
