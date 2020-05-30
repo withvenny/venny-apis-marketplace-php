@@ -1428,6 +1428,7 @@
             if(isset($request['manufacturer'])){$columns.="item_manufacturer,";}
             if(isset($request['images'])){$columns.="item_images,";}
             if(isset($request['product'])){$columns.="product_id,";}	
+            if(isset($request['partner'])){$columns.="partner_id,";}	
             
             $columns.= "app_id,";
             $columns.= "event_id,";
@@ -1449,6 +1450,7 @@
             if(isset($request['manufacturer'])){$values.=":item_manufacturer,";}		
             if(isset($request['images'])){$values.=":item_images,";}		
             if(isset($request['product'])){$values.=":product_id,";}		
+            if(isset($request['partner'])){$values.=":partner_id,";}		
             
             $values.= ":app_id,";
             $values.= ":event_id,";
@@ -1479,6 +1481,7 @@
             if(isset($request['manufacturer'])){$statement->bindValue('item_manufacturer',$request['manufacturer']);}		
             if(isset($request['images'])){$statement->bindValue('item_images',$request['images']);}		
             if(isset($request['product'])){$statement->bindValue('product_id',$request['product']);}		
+            if(isset($request['partner'])){$statement->bindValue('partner_id',$request['partner']);}		
             
             $statement->bindValue(':app_id', $request['app']);
             $statement->bindValue(':event_id', $this->token->event_id());
@@ -1599,6 +1602,7 @@
                     if(isset($request['manufacturer'])){$refinements.="item_manufacturer"." ILIKE "."'%".$request['manufacturer']."%' AND ";}		
                     //if(isset($request['images'])){$refinements.="item_images"." ILIKE "."'%".$request['images']."%' AND ";}		
                     if(isset($request['product'])){$refinements.="product_id"." = "."'".$request['product']."' AND ";}		
+                    if(isset($request['partner'])){$refinements.="partner_id"." = "."'".$request['partner']."' AND ";}		
 
                     //echo $conditions . 'conditions1<br/>';
                     //echo $refinements . 'refinements1<br/>';
