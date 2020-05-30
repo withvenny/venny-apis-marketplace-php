@@ -25,6 +25,7 @@
     if(isset($_REQUEST['description'])){$request['description'] = clean($_REQUEST['description']);}		
     if(isset($_REQUEST['slug'])){$request['slug'] = clean($_REQUEST['slug']);}		
     if(isset($_REQUEST['images'])){$request['images'] = clean($_REQUEST['images']);}		
+    if(isset($_REQUEST['parent'])){$request['parent'] = clean($_REQUEST['parent']);}		
     if(isset($_REQUEST['catalog'])){$request['catalog'] = clean($_REQUEST['catalog']);}		
     if(isset($_REQUEST['partner'])){$request['partner'] = clean($_REQUEST['partner']);}		
 
