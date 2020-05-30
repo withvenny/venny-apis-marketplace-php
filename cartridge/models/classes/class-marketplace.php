@@ -403,7 +403,7 @@
                     $conditions.= $refinements;
                     $conditions.= " active = 1 ";
                     $conditions.= ' AND app_id = \'' . $request['app'] . '\' ';
-                    $conditions.= ' AND profile_id = \'' . $request['profile'] . '\' ';
+                    $conditions.= ' AND partner_id = \'' . $request['partner'] . '\' ';
                     $conditions.= " ORDER BY time_finished DESC ";
                     $subset = " OFFSET {$start}" . " LIMIT {$request['per']}";
                     $sql = "SELECT ";
@@ -786,7 +786,7 @@
                     $conditions.= $refinements;
                     $conditions.= " active = 1 ";
                     $conditions.= ' AND app_id = \'' . $request['app'] . '\' ';
-                    $conditions.= ' AND profile_id = \'' . $request['profile'] . '\' ';
+                    $conditions.= ' AND partner_id = \'' . $request['partner'] . '\' ';
                     $conditions.= " ORDER BY time_finished DESC ";
                     $subset = " OFFSET {$start}" . " LIMIT {$request['per']}";
                     $sql = "SELECT ";
@@ -1169,7 +1169,7 @@
                     $conditions.= $refinements;
                     $conditions.= " active = 1 ";
                     $conditions.= ' AND app_id = \'' . $request['app'] . '\' ';
-                    $conditions.= ' AND profile_id = \'' . $request['profile'] . '\' ';
+                    $conditions.= ' AND partner_id = \'' . $request['partner'] . '\' ';
                     $conditions.= " ORDER BY time_finished DESC ";
                     $subset = " OFFSET {$start}" . " LIMIT {$request['per']}";
                     $sql = "SELECT ";
@@ -1552,7 +1552,7 @@
                     $conditions.= $refinements;
                     $conditions.= " active = 1 ";
                     $conditions.= ' AND app_id = \'' . $request['app'] . '\' ';
-                    $conditions.= ' AND profile_id = \'' . $request['profile'] . '\' ';
+                    $conditions.= ' AND partner_id = \'' . $request['partner'] . '\' ';
                     $conditions.= " ORDER BY time_finished DESC ";
                     $subset = " OFFSET {$start}" . " LIMIT {$request['per']}";
                     $sql = "SELECT ";
