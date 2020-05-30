@@ -724,7 +724,8 @@
                 category_description,		
                 category_slug,		
                 category_images,		
-                catalog_ID,		
+                catalog_ID,
+                parent,
                 app_ID,		
                 time_updated,		
                 time_finished	
@@ -782,6 +783,7 @@
                     //if(isset($request['attributes'])){$refinements.="category_attributes"." ILIKE "."'%".$request['attributes']."%' AND ";}		
                     if(isset($request['online'])){$refinements.="category_online"." = "."'".$request['online']."' AND ";}		
                     if(isset($request['public'])){$refinements.="category_public"." = "."'".$request['public']."' AND ";}		
+                    if(isset($request['parent'])){$refinements.="category_parent"." = "."'".$request['parent']."' AND ";}		
                     if(isset($request['name'])){$refinements.="category_name"." ILIKE "."'%".$request['name']."%' AND ";}		
                     if(isset($request['description'])){$refinements.="category_description"." ILIKE "."'%".$request['description']."%' AND ";}		
                     if(isset($request['slug'])){$refinements.="category_slug"." ILIKE "."'%".$request['slug']."%' AND ";}		
@@ -844,6 +846,7 @@
                             'name' => $row['category_name'],		
                             'description' => $row['category_description'],		
                             'slug' => $row['category_slug'],		
+                            'parent' => $row['category_parent'],		
                             'images' => json_decode($row['category_images']),		
                             'catalog' => $row['catalog_id'],		
                             'app' => $row['app_id'],		
@@ -902,7 +905,7 @@
 
             //
             $domain = $request['domain'];
-            $table = prefixed($domain);
+            $table = $domain;
             $id = $request['id'];
 
             //
@@ -914,6 +917,7 @@
             if(isset($request['online'])){$set.= " category_online = :category_online ";}		
             if(isset($request['public'])){$set.= " category_public = :category_public ";}		
             if(isset($request['name'])){$set.= " category_name = :category_name ";}		
+            if(isset($request['parent'])){$set.= " category_parent = :category_parent ";}		
             if(isset($request['description'])){$set.= " category_description = :category_description ";}		
             if(isset($request['slug'])){$set.= " category_slug = :category_slug ";}		
             if(isset($request['images'])){$set.= " category_images = :category_images ";}		
@@ -941,6 +945,7 @@
             if(isset($request['online'])){$statement->bindValue(':category_online', $request['online']);}		
             if(isset($request['public'])){$statement->bindValue(':category_public', $request['public']);}		
             if(isset($request['name'])){$statement->bindValue(':category_name', $request['name']);}		
+            if(isset($request['parent'])){$statement->bindValue(':category_parent', $request['parent']);}		
             if(isset($request['description'])){$statement->bindValue(':category_description', $request['description']);}		
             if(isset($request['slug'])){$statement->bindValue(':category_slug', $request['slug']);}		
             if(isset($request['images'])){$statement->bindValue(':category_images', $request['images']);}		
