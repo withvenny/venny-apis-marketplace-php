@@ -627,6 +627,7 @@
             if(isset($request['slug'])){$columns.="category_slug,";}		
             if(isset($request['images'])){$columns.="category_images,";}		
             if(isset($request['catalog'])){$columns.="catalog_id,";}		
+            if(isset($request['partner'])){$columns.="partner_id,";}		
             
             $columns.= "app_id,";
             $columns.= "event_id,";
@@ -644,6 +645,7 @@
             if(isset($request['slug'])){$values.=":category_slug,";}		
             if(isset($request['images'])){$values.=":category_images,";}		
             if(isset($request['catalog'])){$values.=":catalog_id,";}		
+            if(isset($request['partner'])){$values.=":partner_id,";}		
             
             $values.= ":app_id,";
             $values.= ":event_id,";
@@ -673,6 +675,7 @@
             if(isset($request['slug'])){$statement->bindValue('category_slug',$request['slug']);}		
             if(isset($request['images'])){$statement->bindValue('category_images',$request['images']);}		
             if(isset($request['catalog'])){$statement->bindValue('catalog_id',$request['catalog']);}		
+            if(isset($request['partner'])){$statement->bindValue('partner_id',$request['partner']);}		
             
             $statement->bindValue(':app_id', $request['app']);
             $statement->bindValue(':event_id', $this->token->event_id());
