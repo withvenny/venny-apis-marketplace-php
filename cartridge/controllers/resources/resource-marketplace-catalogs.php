@@ -80,7 +80,7 @@
 
             } catch (\PDOException $e) {
 
-                echo $e->getCatalog();
+                echo $e->getMessage();
 
             }
 
@@ -107,7 +107,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getCatalog();
+                echo $e->getMessage();
 
             }
 
@@ -128,7 +128,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getCatalog();
+                echo $e->getMessage();
 
             }
 

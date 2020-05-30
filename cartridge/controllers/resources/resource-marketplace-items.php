@@ -81,7 +81,7 @@
 
             } catch (\PDOException $e) {
 
-                echo $e->getItem();
+                echo $e->getMessage();
 
             }
 
@@ -108,7 +108,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getItem();
+                echo $e->getMessage();
 
             }
 
@@ -129,7 +129,7 @@
             
             } catch (\PDOException $e) {
 
-                echo $e->getItem();
+                echo $e->getMessage();
 
             }
 
