@@ -625,6 +625,7 @@
             if(isset($request['name'])){$columns.="category_name,";}		
             if(isset($request['description'])){$columns.="category_description,";}		
             if(isset($request['slug'])){$columns.="category_slug,";}		
+            if(isset($request['parent'])){$columns.="category_parent,";}		
             if(isset($request['images'])){$columns.="category_images,";}		
             if(isset($request['catalog'])){$columns.="catalog_id,";}		
             if(isset($request['partner'])){$columns.="partner_id,";}		
@@ -643,6 +644,7 @@
             if(isset($request['name'])){$values.=":category_name,";}		
             if(isset($request['description'])){$values.=":category_description,";}		
             if(isset($request['slug'])){$values.=":category_slug,";}		
+            if(isset($request['parent'])){$values.=":category_parent,";}		
             if(isset($request['images'])){$values.=":category_images,";}		
             if(isset($request['catalog'])){$values.=":catalog_id,";}		
             if(isset($request['partner'])){$values.=":partner_id,";}		
@@ -673,6 +675,7 @@
             if(isset($request['name'])){$statement->bindValue('category_name',$request['name']);}		
             if(isset($request['description'])){$statement->bindValue('category_description',$request['description']);}		
             if(isset($request['slug'])){$statement->bindValue('category_slug',$request['slug']);}		
+            if(isset($request['parent'])){$statement->bindValue('category_parent',$request['parent']);}		
             if(isset($request['images'])){$statement->bindValue('category_images',$request['images']);}		
             if(isset($request['catalog'])){$statement->bindValue('catalog_id',$request['catalog']);}		
             if(isset($request['partner'])){$statement->bindValue('partner_id',$request['partner']);}		
